@@ -10,6 +10,7 @@ pipeline {
             
        steps {
                 sh 'python -m py_compile calculator.py test_calculator.py'
+                sh 'python -u test_calculator.py'
            stash(name: 'compiled-results', includes: '*.py*')
 
             }
